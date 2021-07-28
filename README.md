@@ -2,7 +2,7 @@
 
   * 기학습된 RDN x4 모델 사용
 
-
+docker pull heejowoo/pruning_rdn:0.5
 
 |x4, Pruning Ratio : 0.5|No Pruning|Apply pruning once|Iterative Pruning & Retrain|
 |-----------------------|----------|------------------|---------------------------|
