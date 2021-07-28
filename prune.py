@@ -244,7 +244,7 @@ def main():
     cuda_device = torch.device("cuda:0")
     #cpu_device = torch.device("cpu:0")
 
-    model_dir = "BLAH_BLAH/0.5"
+    model_dir = "BLAH_BLAH"
     model_filename = "rdn_x4.pth"
     model_filename_prefix = "pruned_model"
     pruned_model_filename = "rdn_pruned.pth"
@@ -263,14 +263,14 @@ def main():
     count = count_parameters(model)
     print(count)
     ##data loader start##
-    train_dataset = TrainDataset("/home/gpuadmin/2020811007/BLAH_BLAH/DIV2K_x4.h5")
+    train_dataset = TrainDataset("BLAH_BLAH/DIV2K_x4.h5")
     train_dataloader = DataLoader(dataset=train_dataset,
                                   batch_size=16,
                                   shuffle=True,
                                   num_workers=8,
                                   pin_memory=True,
                                   drop_last=True)
-    eval_dataset = EvalDataset("/home/gpuadmin/2020811007/BLAH_BLAH/Set5_x4.h5")
+    eval_dataset = EvalDataset("BLAH_BLAH/Set5_x4.h5")
     eval_dataloader = DataLoader(dataset=eval_dataset, batch_size=1)
     ##data loader start end##
 
