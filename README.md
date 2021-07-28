@@ -1,6 +1,7 @@
 # RDN-with-Pruning
 
-  * 기학습된 RDN x4 모델 사용하였음
+  * 기학습된 RDN x4 모델 사용
+
 
 
 |x4, Pruning Ratio : 0.5|No Pruning|Pruning|
