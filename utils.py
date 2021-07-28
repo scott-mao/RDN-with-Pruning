@@ -119,7 +119,7 @@ def prepare_dataloader(num_workers=8,
 
 
 def evaluate_model(model, test_loader, device, criterion=None):
-    eval_dataset = EvalDataset("/home/gpuadmin/2020811007/BLAH_BLAH/Set5_x4.h5")
+    eval_dataset = EvalDataset("BLAH_BLAH/Set5_x4.h5")
     eval_dataloader = DataLoader(dataset=eval_dataset, batch_size=1)
     model.eval()
     epoch_psnr = AverageMeter()
@@ -176,35 +176,35 @@ def evaluate_model_benchmark(model, device):
     model.to(device)
     psnr_average = 0
     for i in range(1, 6):
-        image_file = "/home/gpuadmin/2020811007/data/Set5/x4/img_00{}_SRF_4_HR.png".format(i)
+        image_file = "data/Set5/x4/img_00{}_SRF_4_HR.png".format(i)
         psnr_average=psnr_average+img_cal_psnr(model,image_file,device)
     Set5_psnr_average = psnr_average/5
     psnr_average = 0
     for i in range(1, 15):
         if i <= 9:
-            image_file = "/home/gpuadmin/2020811007/data/Set14/x4/img_00{}_SRF_4_HR.png".format(i)
+            image_file = "data/Set14/x4/img_00{}_SRF_4_HR.png".format(i)
         elif i > 9 and i <= 14:
-            image_file = "/home/gpuadmin/2020811007/data/Set14/x4/img_0{}_SRF_4_HR.png".format(i)
+            image_file = "data/Set14/x4/img_0{}_SRF_4_HR.png".format(i)
         psnr_average=psnr_average+img_cal_psnr(model,image_file,device)
     Set14_psnr_average = psnr_average/14
     psnr_average = 0
     for i in range(1, 101):
         if i <= 9:
-            image_file = "/home/gpuadmin/2020811007/data/BSD100/x4/img_00{}_SRF_4_HR.png".format(i)
+            image_file = "data/BSD100/x4/img_00{}_SRF_4_HR.png".format(i)
         elif i > 9 and i <= 99:
-            image_file = "/home/gpuadmin/2020811007/data/BSD100/x4/img_0{}_SRF_4_HR.png".format(i)
+            image_file = "data/BSD100/x4/img_0{}_SRF_4_HR.png".format(i)
         elif i == 100:
-            image_file = "/home/gpuadmin/2020811007/data/BSD100/x4/img_100_SRF_4_HR.png"
+            image_file = "data/BSD100/x4/img_100_SRF_4_HR.png"
         psnr_average = psnr_average + img_cal_psnr(model,image_file,device)
     BSD100_psnr_average = psnr_average / 100
     psnr_average = 0
     for i in range(1, 101):
         if i <= 9:
-            image_file = "/home/gpuadmin/2020811007/data/Urban100/x4/img_00{}_SRF_4_HR.png".format(i)
+            image_file = "data/Urban100/x4/img_00{}_SRF_4_HR.png".format(i)
         elif i > 9 and i <= 99:
-            image_file = "/home/gpuadmin/2020811007/data/Urban100/x4/img_0{}_SRF_4_HR.png".format(i)
+            image_file = "data/Urban100/x4/img_0{}_SRF_4_HR.png".format(i)
         elif i == 100:
-            image_file = "/home/gpuadmin/2020811007/data/Urban100/x4/img_100_SRF_4_HR.png"
+            image_file = "data/Urban100/x4/img_100_SRF_4_HR.png"
         psnr_average = psnr_average + img_cal_psnr(model,image_file,device)
     Urban100_psnr_average = psnr_average / 100
     return Set5_psnr_average, Set14_psnr_average, BSD100_psnr_average, Urban100_psnr_average
