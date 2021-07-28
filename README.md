@@ -9,6 +9,7 @@ $ sudo docker pull heejowoo/pruning_rdn:0.5
 </pre>
 
 * Super Resolutino Deep Network 중 하나인 RDN에 대해 기 학습된 모델을 이용하여 0.5 Pruning Ratio로 설정하여 반복적인 Pruning과 재학습 진행
+
 |x4, Pruning Ratio : 0.5|No Pruning(PSNR(dB))|Apply pruning once(PSNR(dB))|Iterative Pruning & Retrain(PSNR(dB))|
 |-----------------------|--------------------|----------------------------|-------------------------------------|
 |Set5|32.4|25.64|32.41|
